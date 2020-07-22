@@ -3,8 +3,9 @@
 require('db.php');
 
 $id = $_GET['id'];
-$stmt = Database :: prepare("DELETE FROM books WHERE id=$id");
-$stmt -> execute();
+$sql = "DELETE FROM books WHERE id=:id";
+$stmt = Database :: prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+$stmt -> execute(array(':id' => $id));
 header("Location: ../");
 
 ?>

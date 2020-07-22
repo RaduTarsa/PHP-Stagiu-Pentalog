@@ -16,38 +16,37 @@ foreach ($arr as $value) {
 if(isset($_POST['book-title-edit']))
 {
   $newtitle = $_POST['book-title'];
-  $stmt = Database :: prepare("UPDATE books SET title='$newtitle' WHERE id=$id");
-  $stmt -> execute();
+  $sql = "UPDATE books SET title=:newtitle WHERE id=:id";
+  $stmt = Database :: prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+  $stmt -> execute(array(':newtitle' => $newtitle, ':id' => $id));
   header("Refresh:0");
 }
 
 if(isset($_POST['book-author-edit']))
 {
   $newauthor = $_POST['book-author'];
-  $stmt = Database :: prepare("UPDATE books SET author_name='$newauthor' WHERE id=$id");
-  $stmt -> execute();
+  $sql = "UPDATE books SET author_name=:newauthor WHERE id=:id";
+  $stmt = Database :: prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+  $stmt -> execute(array(':newauthor' => $newauthor, ':id' => $id));
   header("Refresh:0");
 }
 
 if(isset($_POST['book-publisher-edit']))
 {
   $newpublisher = $_POST['book-publisher'];
-  $stmt = Database :: prepare("UPDATE books SET publisher_name='$newpublisher' WHERE id=$id");
-  $stmt -> execute();
+  $sql = "UPDATE books SET publisher_name=:newpublisher WHERE id=:id";
+  $stmt = Database :: prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+  $stmt -> execute(array(':newpublisher' => $newpublisher, ':id' => $id));
   header("Refresh:0");
 }
 
 if(isset($_POST['book-year-edit']))
 {
   $newyear = $_POST['book-year'];
-  $stmt = Database :: prepare("UPDATE books SET publish_year='$newyear' WHERE id=$id");
-  $stmt -> execute();
+  $sql = "UPDATE books SET publish_year=:newyear WHERE id=:id";
+  $stmt = Database :: prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+  $stmt -> execute(array(':newyear' => $newyear, ':id' => $id));
   header("Refresh:0");
-}
-
-if(isset($_POST['go-back']))
-{
-  header("Location: index.php");
 }
 
 ?>

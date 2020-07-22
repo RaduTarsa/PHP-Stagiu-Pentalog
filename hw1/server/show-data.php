@@ -2,7 +2,7 @@
 
 $ini = "server/config.ini";
 
-$stmt = Database :: prepare("SELECT * from books ;");
+$stmt = Database :: prepare("SELECT * from books;");
 $stmt -> execute();
 $arr = $stmt -> fetchAll();
 

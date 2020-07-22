@@ -21,7 +21,7 @@ require('server/store.php');
   <h3>Book Publisher:</h3>
   <input type="text" name="book-publisher">
   <h3>Book Publish Year:</h3>
-  <input type="text" name="book-year">
+  <input type="number" name="book-year">
   <br>
   <input type="submit" name="book-add" value="Add Book">
 </form>

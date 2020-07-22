@@ -14,39 +14,37 @@ require('server/update.php');
 <body>
 
 <form method="post">
-  <h3>Old Title:</h3>
+  <p><b>Old Title:</b></p>
   <p><?=$oldtitle?></p>
-  <h3>New Title:</h3>
+  <p><b>New Title:</b></p>
   <input type="text" name="book-title">
   <input type="submit" name="book-title-edit" value="Edit Title">
 </form><hr>
 <form method="post">
-  <h3>Old Author:</h3>
+  <p><b>Old Author:</b></p>
   <p><?=$oldauthor?></p>
-  <h3>New Author:</h3>
+  <p><b>New Author:</b></p>
   <input type="text" name="book-author">
   <input type="submit" name="book-author-edit" value="Edit Name">
 </form><hr>
 <form method="post">
-  <h3>Old Publisher:</h3>
+  <p><b>Old Publisher:</b></p>
   <p><?=$oldpuplisher?></p>
-  <h3>New Publisher:</h3>
+  <p><b>New Publisher:</b></p>
   <input type="text" name="book-publisher">
   <input type="submit" name="book-publisher-edit" value="Edit Name">
 </form><hr>
 <form method="post">
-  <h3>Old Publish Year:</h3>
+  <p><b>Old Publish Year:</b></p>
   <p><?=$oldyear?></p>
-  <h3>New Publish Year:</h3>
+  <p><b>New Publish Year:</b></p>
   <input type="number" name="book-year">
   <input type="submit" name="book-year-edit" value="Edit Year">
 </form>
 
 <br><hr><br>
 
-<form method="post">
-  <input type="submit" name="go-back" value="Go Back">
-</form>
+<a href="index.php">Go Back</a>
 
 </body>
 </html>
